@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>[title]--{$tpshop_config['shop_info_store_title']}</title>
+    <link rel="stylesheet" href="__STATIC__/css/newStyle.css?t=1">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/iconfont.css"/>
+    <link rel="stylesheet" href="__STATIC__/css/swiper.min.css">
+    <script src="__STATIC__/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__STATIC__/js/mobile-util.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__PUBLIC__/js/global.js?t=12"></script>
+    <script src="__STATIC__/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__PUBLIC__/js/mobile_common.js"></script>
+    <script src="__STATIC__/js/swiper.min.js" charset="utf-8"></script>
+    <script src="__STATIC__/js/vue.js" charset="utf-8"></script>
+
+    <style media="screen">
+        .app {
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, "BBAlpha Sans", "S60 Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('__STATIC__/images/one/bg.jpg');
+            background-size: auto 100%;
+            background-position: center center;
+            position: relative;
+        }
+
+        .header {
+            height: 2.069rem;
+            background: transparent;
+            padding: 0 .789rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: .469rem;
+        }
+
+        .header .date {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .header .date .date__front {
+            font-weight: 600;
+            font-size: 1.7rem;
+            font-family: Helvetica;
+        }
+
+        .header .date .date__end {
+            margin-left: .192rem;
+        }
+
+        .header .date .festival {
+            margin-left: .36rem;
+        }
+
+        .header .weather {
+            display: flex;
+            align-items: flex-end;
+            color: #797979;
+            font-size: .52rem;
+            padding-bottom: .3rem;
+            font-family: Helvetica;
+        }
+
+        .header .weather .temperature {
+            margin-left: .48rem;
+            font-size: .72rem;
+            font-family: "微软雅黑";
+            transform: translateY(2px);
+        }
+
+        .header .weather .wea {
+            margin-left: .298rem;
+            font-size: .72rem;
+            font-family: "微软雅黑";
+        }
+
+        .body {
+            flex: 1;
+        }
+
+        .contentWrap {
+            width: 80vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,1);
+            opacity: .9;
+            border-radius: .34rem;
+            overflow: hidden;
+            box-shadow: 0 6px 14px 0 rgba(26, 26, 26, 0.06);
+        }
+
+        .content {
+            /* position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255,255,255,1); */
+        }
+
+        .photo-wrap {
+            position: relative;
+        }
+
+        .one-photo {
+            width: 100%;
+            position: relative;
+            z-index: 0;
+        }
+
+        .photo-date {
+            right: .4rem;
+            bottom: .32rem;
+            position: absolute;
+            font-size: .4rem;
+            color: #fff;
+            font-family: "Hiragino Sans GB";
+        }
+
+        .photo-author {
+            color: #797979;
+            font-size: .52rem;
+            padding: .48rem .48rem .72rem .48rem;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .one-text {
+            font-family: Helvetica Neue, 'PingFang SC';
+            padding: .52rem .96rem;
+            text-align: center;
+            font-size: .56rem;
+            color: #000;
+            line-height: .98rem;
+        }
+
+        .text-author {
+            padding: .72rem .48rem;
+            text-align: right;
+            font-size: .52rem;
+            color: #797979;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app" id="app">
+        <div class="header">
+            <div class="date">
+                <div class="date__front">
+                    07
+                </div>
+                <div class="date__end">
+                    Mar.2019
+                </div>
+                <div class="festival">
+                    女生节
+                </div>
+            </div>
+            <div class="weather">
+                <div class="city">
+                    广州
+                </div>
+                <div class="temperature">
+                    14℃
+                </div>
+                <div class="wea">
+                    阴
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="contentWrap">
+                <div class="photo-wrap">
+                    <img class="one-photo" src="__STATIC__/images/one/bg.jpg" alt="">
+                    <span class="photo-date">2018 · 03 · 07</span>
+                </div>
+                <div class="content">
+                    <div class="photo-author">
+                        <span>图丨</span>
+                        <span>青椒和番茄仔</span>
+                    </div>
+                    <div class="one-text">
+                        Gifted by the world’s most generous community of photographers.
+                    </div>
+                    <div class="text-author">
+                        ——《国王与乞丐》
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="__STATIC__/js/html2canvas.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        html2canvas(document.querySelector("#app")).then(canvas => {
+            document.body.appendChild(canvas)
+        });
+    </script>
+</body>
+</html>
